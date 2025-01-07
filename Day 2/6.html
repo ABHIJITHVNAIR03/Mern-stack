@@ -1,0 +1,234 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SaaS Pricing Table</title>
+    <style>
+        /* General Styles */
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            font-family: 'Arial', sans-serif;
+            background: linear-gradient(to right, #4e73df, #1c3d8d); /* New Gradient Background */
+            color: #fff;
+            line-height: 1.6;
+            padding: 20px;
+        }
+
+        /* Header Section */
+        header {
+            text-align: center;
+            margin-bottom: 50px;
+        }
+
+        header h1 {
+            font-size: 2.5rem;
+            font-weight: bold;
+            color: #f7f7f7;
+        }
+
+        /* Pricing Table Section */
+        .pricing-table {
+            max-width: 1200px;
+            margin: 0 auto;
+            text-align: center;
+        }
+
+        /* Pricing Toggle */
+        .pricing-toggle {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            margin-bottom: 50px;
+        }
+
+        .pricing-toggle label {
+            font-size: 1.2rem;
+            margin-right: 10px;
+            color: #f7f7f7; /* Light color for the label */
+        }
+
+        .toggle {
+            display: none;
+        }
+
+        .toggle-label {
+            font-size: 1.2rem;
+            font-weight: bold;
+            cursor: pointer;
+            transition: color 0.3s ease;
+            color: #f7f7f7;
+        }
+
+        .toggle-label:hover {
+            color: #ffeb3b; /* Golden color on hover */
+        }
+
+        /* Pricing Cards */
+        .pricing-cards {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 30px;
+            justify-items: center;
+        }
+
+        .pricing-card {
+            background: #ffffff;
+            border-radius: 12px;
+            padding: 20px;
+            box-shadow: 0 6px 20px rgba(0, 0, 0, 0.1);
+            width: 300px;
+            text-align: center;
+            position: relative;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .pricing-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 12px 30px rgba(0, 0, 0, 0.1);
+        }
+
+        .pricing-card h3 {
+            font-size: 1.5rem;
+            font-weight: bold;
+            margin-bottom: 15px;
+            color: #1c3d8d; /* Dark blue for plan titles */
+        }
+
+        .price {
+            font-size: 2rem;
+            font-weight: bold;
+            margin: 20px 0;
+            color: #2c3e50; /* Darker shade for price */
+        }
+
+        .features {
+            margin: 10px 0;
+            color: #7f8c8d; /* Subtle gray for features */
+        }
+
+        .cta-button {
+            background-color: #4caf50;
+            color: white;
+            border: none;
+            padding: 12px 20px;
+            font-size: 1rem;
+            border-radius: 8px;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+        }
+
+        .cta-button:hover {
+            background-color: #388e3c;
+        }
+
+        .recommended {
+            border: 2px solid #4caf50;
+            background-color: #f1f8f2; /* Light green background for the recommended plan */
+        }
+
+        .recommended .cta-button {
+            background-color: #388e3c;
+        }
+
+        .tooltip {
+            display: none;
+            position: absolute;
+            top: -10px;
+            left: 50%;
+            transform: translateX(-50%);
+            background-color: #ff9800;
+            color: #fff;
+            padding: 5px 10px;
+            border-radius: 5px;
+            font-size: 0.9rem;
+            opacity: 0;
+            transition: opacity 0.3s ease;
+        }
+
+        .pricing-card:hover .tooltip {
+            display: block;
+            opacity: 1;
+        }
+
+        /* Responsive Design */
+        @media (max-width: 768px) {
+            .pricing-cards {
+                grid-template-columns: repeat(2, 1fr);
+            }
+        }
+
+        @media (max-width: 480px) {
+            .pricing-cards {
+                grid-template-columns: 1fr;
+            }
+
+            .pricing-toggle {
+                flex-direction: column;
+                margin-bottom: 30px;
+            }
+
+            .pricing-toggle label {
+                margin-bottom: 10px;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Header -->
+    <header>
+        <h1>Your SaaS Platform</h1>
+    </header>
+
+    <!-- Pricing Table Section -->
+    <section class="pricing-table">
+        <!-- Pricing Toggle -->
+        <div class="pricing-toggle">
+            <label for="toggle">Switch to:</label>
+            <input type="checkbox" id="toggle" name="toggle" class="toggle">
+            <span class="toggle-label">Monthly</span>
+        </div>
+
+        <!-- Pricing Cards -->
+        <div class="pricing-cards">
+            <!-- Basic Plan -->
+            <div class="pricing-card basic">
+                <h3 class="plan-name">Basic</h3>
+                <p class="price" data-monthly="29" data-yearly="290">$29/month</p>
+                <p class="features">✓ 1 User</p>
+                <p class="features">✓ 5GB Storage</p>
+                <p class="features">✓ 24/7 Support</p>
+                <button class="cta-button">Choose Basic</button>
+            </div>
+
+            <!-- Pro Plan (Recommended) -->
+            <div class="pricing-card pro recommended">
+                <h3 class="plan-name">Pro</h3>
+                <p class="price" data-monthly="59" data-yearly="590">$59/month</p>
+                <p class="features">✓ 10 Users</p>
+                <p class="features">✓ 50GB Storage</p>
+                <p class="features">✓ Priority Support</p>
+                <button class="cta-button">Choose Pro</button>
+                <div class="tooltip">Recommended Plan</div>
+            </div>
+
+            <!-- Premium Plan -->
+            <div class="pricing-card premium">
+                <h3 class="plan-name">Premium</h3>
+                <p class="price" data-monthly="99" data-yearly="990">$99/month</p>
+                <p class="features">✓ Unlimited Users</p>
+                <p class="features">✓ 100GB Storage</p>
+                <p class="features">✓ 24/7 VIP Support</p>
+                <button class="cta-button">Choose Premium</button>
+            </div>
+        </div>
+    </section>
+
+</body>
+</html>

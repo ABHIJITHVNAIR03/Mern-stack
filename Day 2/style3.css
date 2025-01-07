@@ -1,0 +1,70 @@
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f4f4f4; /* Light background */
+}
+
+h1 {
+    text-align: center;
+}
+
+.grid-container {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr); /* 3 columns */
+    gap: 10px; /* Space between grid items */
+    padding: 20px;
+}
+
+.image-box {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 200px; /* Fixed height for uniform appearance */
+}
+
+#image1 {
+    border: 3px dotted rgb(0, 140, 246);
+}
+
+#image2 {
+    border: 3px dashed rgb(72, 255, 0);
+}
+
+#image3 {
+    border: 3px solid rgb(215, 23, 164);
+}
+
+#image4 {
+    border: 5px double rgb(220, 157, 9);
+}
+
+#image5 {
+    border: 3px groove rgb(91, 52, 52);
+}
+
+#image6 {
+    border: 3px ridge black;
+}
+
+#image7 {
+    border: 3px inset rgb(255, 1, 1);
+}
+
+#image8 {
+    border: 3px outset rgb(105, 198, 12);
+}
+
+#image9 {
+    border: none; /* No border */
+}
+
+/* Optional: Add hover effect for images */
+.image-box img {
+    max-width: 100%;
+    max-height: 100%;
+    object-fit: cover; /* Maintain aspect ratio */
+    transition: transform 0.2s; /* Smooth zoom effect */
+}
+
+.image-box:hover img {
+    transform: scale(1.05); /* Image zoom on hover */
+}

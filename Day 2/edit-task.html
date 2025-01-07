@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Edit Task</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: Arial, sans-serif;
+            background: linear-gradient(135deg, #6a11cb, #2575fc);
+            color: #fff;
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .container {
+            background-color: #34495e;
+            padding: 30px;
+            border-radius: 10px;
+            width: 400px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+        }
+
+        h2 {
+            text-align: center;
+            margin-bottom: 20px;
+        }
+
+        .input-field {
+            width: 100%;
+            padding: 10px;
+            margin: 10px 0;
+            border: 1px solid #ecf0f1;
+            border-radius: 5px;
+            background-color: transparent;
+            color: #fff;
+            font-size: 1rem;
+        }
+
+        .input-field:focus {
+            outline: none;
+            border-color: #3498db;
+        }
+
+        .submit-btn {
+            width: 100%;
+            padding: 12px;
+            background-color: #3498db;
+            color: #fff;
+            border: none;
+            border-radius: 5px;
+            font-size: 1.1rem;
+            cursor: pointer;
+        }
+
+        .submit-btn:hover {
+            background-color: #2980b9;
+        }
+
+        .back-link {
+            display: block;
+            text-align: center;
+            margin-top: 15px;
+            color: #ecf0f1;
+            text-decoration: none;
+        }
+
+        .back-link:hover {
+            color: #3498db;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="container">
+        <h2>Edit Task</h2>
+        
+        <!-- Task Edit Form -->
+        <form action="#">
+            <input type="hidden" name="taskId" value="1"> <!-- Task ID can be used in backend or handled in the URL -->
+
+            <input type="text" name="taskTitle" class="input-field" placeholder="Task Title" value="Design Homepage" required>
+            
+            <textarea name="taskDescription" class="input-field" placeholder="Task Description" rows="4" required>Design the homepage for the new website. Should be responsive and modern.</textarea>
+            
+            <button type="submit" class="submit-btn">Save Changes</button>
+        </form>
+        
+        <a href="task-list.html" class="back-link">Back to Dashboard</a>
+    </div>
+
+</body>
+</html>
