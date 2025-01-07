@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Sofas - My Online Store</title>
+    <link rel="stylesheet" href="styles.css">
+    <style>
+        /* Same styling as the previous page */
+        body {
+            font-family: 'Arial', sans-serif;
+            background-color: #f5f5f5;
+            color: #333;
+            margin: 0;
+            padding: 0;
+        }
+
+        header {
+            background-color: #333;
+            color: white;
+            padding: 15px 0;
+            text-align: center;
+        }
+
+        .logo h1 {
+            font-size: 2rem;
+        }
+
+        nav {
+            background-color: #444;
+            padding: 10px 0;
+            text-align: center;
+        }
+
+        nav ul {
+            list-style-type: none;
+        }
+
+        nav ul li {
+            display: inline-block;
+            margin: 0 15px;
+        }
+
+        nav ul li a {
+            color: white;
+            text-decoration: none;
+            font-size: 1.2rem;
+            transition: color 0.3s;
+        }
+
+        nav ul li a:hover {
+            color: #ffcc00;
+        }
+
+        main {
+            padding: 50px 10%;
+            text-align: center;
+        }
+
+        main h2 {
+            font-size: 2.5rem;
+            color: #333;
+        }
+
+        main p {
+            font-size: 1.1rem;
+            color: #666;
+            margin-bottom: 40px;
+        }
+
+        .product-list {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+            justify-items: center;
+        }
+
+        .product {
+            background-color: white;
+            border-radius: 10px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+            padding: 20px;
+            text-align: center;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .product:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 8px 25px rgba(0, 0, 0, 0.15);
+        }
+
+        .product img {
+            width: 100%;
+            height: auto;
+            border-radius: 8px;
+            margin-bottom: 20px;
+        }
+
+        .product h3 {
+            font-size: 1.8rem;
+            color: #333;
+        }
+
+        .product p {
+            color: #777;
+            margin-bottom: 20px;
+        }
+
+        .product a {
+            padding: 12px 20px;
+            background-color: #ffcc00;
+            color: white;
+            text-decoration: none;
+            border-radius: 5px;
+            font-weight: bold;
+            transition: background-color 0.3s;
+        }
+
+        .product a:hover {
+            background-color: #e6b800;
+        }
+
+        footer {
+            background-color: #333;
+            color: white;
+            text-align: center;
+            padding: 20px;
+        }
+    </style>
+</head>
+
+<body>
+
+    <header>
+        <div class="logo">
+            <h1>My Online Store - Sofas</h1>
+        </div>
+    </header>
+
+    <nav>
+        <ul>
+            <li><a href="electronics.html">Electronics</a></li>
+            <li><a href="furniture.html">Furniture</a></li>
+            <li><a href="clothing.html">Clothing</a></li>
+        </ul>
+    </nav>
+
+    <main>
+        <h2>Sofas</h2>
+        <p>Comfort and style with our wide range of sofas.</p>
+        <div class="product-list">
+            <div class="product">
+                <img src="https://dukaan.b-cdn.net/700x700/webp/upload_file_service/5f925e59-ca74-423b-9acf-7e421ae0131c/46908f224f0880b5838f50b2b4cew-jpg-960x960-1.webp" alt="Leather Sofa">
+                <h3>Leather Sofa</h3>
+                <p>Luxurious leather sofa with modern design.</p>
+                <a href="product-details.html">View Details</a>
+            </div>
+            <div class="product">
+                <img src="https://images.woodenstreet.de/image/data/fabric-sofa/Fabric-Sofa-Combination/renato-fabric-sofa-combination-with-2-pouffes/updated/new-logo/1.jpg" alt="Fabric Sofa">
+                <h3>Fabric Sofa</h3>
+                <p>Soft and cozy fabric sofa for any living room.</p>
+                <a href="product-details.html">View Details</a>
+            </div>
+        </div>
+    </main>
+
+    <footer>
+        <p>&copy; 2025 My Online Store. All rights reserved.</p>
+    </footer>
+
+</body>
+
+</html>

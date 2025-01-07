@@ -1,0 +1,211 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>ShopRight - Payment</title>
+    <link rel="stylesheet" href="styles.css">
+    <style>
+        /* Global Styles */
+        body {
+            font-family: 'Arial', sans-serif;
+            background-color: #f8f9fc;
+            margin: 0;
+            padding: 0;
+            color: #333;
+        }
+
+        header {
+            background-color: #FF6347;  /* Vibrant Coral */
+            color: white;
+            padding: 1.5em 2em;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        }
+
+        header h1 {
+            margin: 0;
+            font-size: 2.5rem;
+        }
+
+        .auth-buttons button {
+            background-color: #fff;
+            border: 2px solid #2980B9;
+            color: #2980B9;
+            padding: 10px 20px;
+            cursor: pointer;
+            border-radius: 5px;
+            font-size: 1em;
+            transition: all 0.3s ease;
+        }
+
+        .auth-buttons button:hover {
+            background-color: #2980B9;
+            color: white;
+        }
+
+        nav {
+            background-color: #2980B9;  /* Deep Blue */
+            padding: 1em;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        nav a {
+            color: white;
+            text-decoration: none;
+            padding: 12px 20px;
+            font-size: 1.2em;
+            transition: background-color 0.3s;
+        }
+
+        nav a:hover {
+            background-color: #1c6fa0;
+            border-radius: 5px;
+        }
+
+        main {
+            max-width: 1200px;
+            margin: 3em auto;
+            padding: 2em;
+            background-color: white;
+            border-radius: 8px;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+        }
+
+        h2 {
+            font-size: 2rem;
+            color: #333;
+            margin-bottom: 1em;
+            font-weight: 700;
+        }
+
+        .payment-details {
+            margin-top: 2em;
+        }
+
+        table {
+            width: 100%;
+            margin-bottom: 2em;
+            border-collapse: collapse;
+        }
+
+        table th,
+        table td {
+            padding: 1em;
+            text-align: left;
+        }
+
+        table th {
+            background-color: #f0f0f0;
+        }
+
+        table td {
+            border-bottom: 1px solid #ddd;
+        }
+
+        .btn-primary {
+            background-color: #FF6347;  /* Vibrant Coral */
+            color: white;
+            padding: 12px 25px;
+            font-size: 1.2rem;
+            border-radius: 5px;
+            border: none;
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+
+        .btn-primary:hover {
+            background-color: #e55347;  /* Darker Coral */
+            transform: scale(1.05);
+        }
+
+        footer {
+            background-color: #34495E;
+            color: white;
+            text-align: center;
+            padding: 1em;
+            margin-top: 3em;
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Header Section -->
+    <header>
+        <div class="logo">
+            <img src="https://via.placeholder.com/150" alt="ShopRight Logo" height="50">
+        </div>
+        <h1>ShopRight</h1>
+        <div class="auth-buttons">
+            <button onclick="window.location.href='login.html'">Login</button>
+            <button onclick="window.location.href='signup.html'">Signup</button>
+        </div>
+    </header>
+
+    <!-- Navigation Bar -->
+    <nav>
+        <div>
+            <a href="index.html">Home</a>
+            <a href="product.html">Products</a>
+            <a href="shopping.html">Shopping</a>
+            <a href="product-category.html">Categories</a>
+            <a href="payment.html">Payment</a>
+        </div>
+        <input type="text" class="search-bar" placeholder="Search...">
+    </nav>
+
+    <!-- Payment Content -->
+    <main>
+        <h2>Payment Details</h2>
+
+        <!-- Order Summary -->
+        <div class="payment-details">
+            <h3>Order Summary</h3>
+            <table>
+                <tr>
+                    <th>Product</th>
+                    <th>Price</th>
+                </tr>
+                <tr>
+                    <td>Smartphone</td>
+                    <td>$499.99</td>
+                </tr>
+                <tr>
+                    <td>Headphones</td>
+                    <td>$79.99</td>
+                </tr>
+                <tr>
+                    <td><strong>Total</strong></td>
+                    <td><strong>$579.98</strong></td>
+                </tr>
+            </table>
+            
+            <!-- Payment Form -->
+            <h3>Enter Payment Information</h3>
+            <form>
+                <label for="card-number">Card Number:</label>
+                <input type="text" id="card-number" name="card-number" placeholder="Enter your card number" required>
+
+                <label for="expiry-date">Expiry Date:</label>
+                <input type="month" id="expiry-date" name="expiry-date" required>
+
+                <label for="cvv">CVV:</label>
+                <input type="text" id="cvv" name="cvv" placeholder="Enter CVV" required>
+
+                <button type="submit" class="btn-primary">Confirm Payment</button>
+            </form>
+        </div>
+    </main>
+
+    <!-- Footer Section -->
+    <footer>
+        <p>&copy; 2025 ShopRight. All rights reserved.</p>
+    </footer>
+
+</body>
+</html>
