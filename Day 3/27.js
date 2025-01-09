@@ -1,0 +1,1 @@
+//write a js where given 2 strings in which concatenate only the vowels that are present in first string with consonants present in second string.
