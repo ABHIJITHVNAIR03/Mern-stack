@@ -1,1 +1,0 @@
-//write js to convert binary to decimal.

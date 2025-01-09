@@ -1,1 +1,0 @@
-//write a js that determine the 2 strings are anagrams

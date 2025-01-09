@@ -1,1 +1,0 @@
-//write js to check the given no. is armstrong or not.

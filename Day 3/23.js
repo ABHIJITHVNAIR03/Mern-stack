@@ -1,1 +1,0 @@
-// write js to find factorial of a no. using recursive function.
