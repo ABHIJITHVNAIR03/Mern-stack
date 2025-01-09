@@ -1,0 +1,1 @@
+//write js to display all the no. which r divisible by 30 but not by 3

@@ -1,0 +1,1 @@
+//write a js to count the occurrence of each char of given string
