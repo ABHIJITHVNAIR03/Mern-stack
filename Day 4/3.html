@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Custom Video Player</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+      margin: 0;
+      background: linear-gradient(to bottom, #6a11cb, #2575fc);
+    }
+
+    .video-container {
+      background: #fff;
+      padding: 20px;
+      border-radius: 12px;
+      box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
+      text-align: center;
+      width: 500px;
+    }
+
+    video {
+      width: 100%;
+      border-radius: 8px;
+    }
+
+    .progress-bar {
+      width: 100%;
+      margin: 10px 0;
+    }
+
+    .progress-bar input {
+      width: 100%;
+      -webkit-appearance: none;
+      appearance: none;
+      height: 8px;
+      background: #ddd;
+      border-radius: 5px;
+      outline: none;
+      cursor: pointer;
+    }
+
+    .progress-bar input::-webkit-slider-thumb {
+      -webkit-appearance: none;
+      appearance: none;
+      width: 16px;
+      height: 16px;
+      border-radius: 50%;
+      background: #2575fc;
+      cursor: pointer;
+    }
+
+    .controls {
+      display: flex;
+      justify-content: space-around;
+      margin-top: 10px;
+    }
+
+    .controls button {
+      background: #2575fc;
+      border: none;
+      color: white;
+      padding: 10px 20px;
+      font-size: 16px;
+      border-radius: 6px;
+      cursor: pointer;
+      transition: background 0.3s ease;
+    }
+
+    .controls button:hover {
+      background: #6a11cb;
+    }
+  </style>
+</head>
+<body>
+  <div class="video-container">
+    <video id="video" src="https://www.w3schools.com/html/mov_bbb.mp4" controlsList="nodownload"></video>
+    <div class="progress-bar">
+      <input id="progress" type="range" min="0" value="0" step="0.1">
+    </div>
+    <div class="controls">
+      <button id="play-pause">Play</button>
+      <button id="rewind">Rewind 5s</button>
+      <button id="fastforward">Fast Forward 5s</button>
+    </div>
+  </div>
+
+  <script>
+    const video = document.getElementById('video');
+    const playPauseButton = document.getElementById('play-pause');
+    const rewindButton = document.getElementById('rewind');
+    const fastForwardButton = document.getElementById('fastforward');
+    const progress = document.getElementById('progress');
+
+    // Play/Pause functionality
+    playPauseButton.addEventListener('click', () => {
+      if (video.paused) {
+        video.play();
+        playPauseButton.textContent = 'Pause';
+      } else {
+        video.pause();
+        playPauseButton.textContent = 'Play';
+      }
+    });
+
+    // Rewind 5 seconds
+    rewindButton.addEventListener('click', () => {
+      video.currentTime -= 5;
+    });
+
+    // Fast Forward 5 seconds
+    fastForwardButton.addEventListener('click', () => {
+      video.currentTime += 5;
+    });
+
+    // Update progress bar as video plays
+    video.addEventListener('timeupdate', () => {
+      progress.value = (video.currentTime / video.duration) * 100;
+    });
+
+    // Seek functionality
+    progress.addEventListener('input', () => {
+      video.currentTime = (progress.value / 100) * video.duration;
+    });
+  </script>
+</body>
+</html>
